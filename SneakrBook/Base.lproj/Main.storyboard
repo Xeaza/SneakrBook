@@ -74,6 +74,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boY-IY-MdM">
+                                <rect key="frame" x="180" y="300" width="240" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="HKR-XN-1TE"/>
+                                    <constraint firstAttribute="height" constant="21" id="cL6-RL-DRQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gkL-s5-Ufj">
                                 <rect key="frame" x="180" y="78" width="240" height="203"/>
                                 <constraints>
@@ -81,31 +91,21 @@
                                     <constraint firstAttribute="width" constant="240" id="yhW-eh-eQQ"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gb8-Cj-yOD">
+                                <rect key="frame" x="180" y="385" width="240" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="THB-Jj-1Uw"/>
+                                    <constraint firstAttribute="height" constant="21" id="msk-x2-zJw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFd-xh-9j3">
                                 <rect key="frame" x="180" y="342" width="240" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="2Kh-3Z-E79"/>
                                     <constraint firstAttribute="height" constant="21" id="SVw-dU-9AV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gb8-Cj-yOD">
-                                <rect key="frame" x="180" y="385" width="240" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="K3g-Qs-Kfj"/>
-                                    <constraint firstAttribute="height" constant="21" id="LOX-ED-G0a"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boY-IY-MdM">
-                                <rect key="frame" x="180" y="300" width="240" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="HKR-XN-1TE"/>
-                                    <constraint firstAttribute="height" constant="21" id="cL6-RL-DRQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -119,12 +119,18 @@
                             <constraint firstAttribute="centerX" secondItem="gkL-s5-Ufj" secondAttribute="centerX" id="TNG-Jh-wUB"/>
                             <constraint firstAttribute="centerX" secondItem="boY-IY-MdM" secondAttribute="centerX" id="Wmv-Uz-xtK"/>
                             <constraint firstAttribute="centerX" secondItem="tFd-xh-9j3" secondAttribute="centerX" id="aCE-ge-rt9"/>
-                            <constraint firstItem="Gb8-Cj-yOD" firstAttribute="top" secondItem="tFd-xh-9j3" secondAttribute="bottom" constant="22" id="lyu-u7-4cG"/>
-                            <constraint firstAttribute="centerX" secondItem="Gb8-Cj-yOD" secondAttribute="centerX" id="q1G-DW-kzv"/>
+                            <constraint firstItem="Gb8-Cj-yOD" firstAttribute="top" secondItem="tFd-xh-9j3" secondAttribute="bottom" constant="22" id="jcH-Hh-BWQ"/>
+                            <constraint firstAttribute="centerX" secondItem="Gb8-Cj-yOD" secondAttribute="centerX" id="np7-gX-dbY"/>
                             <constraint firstItem="gkL-s5-Ufj" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="14" id="qBf-MU-PI5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
+                    <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN">
+                        <barButtonItem key="rightBarButtonItem" title="Favorite" id="7Se-3F-eZG">
+                            <connections>
+                                <segue destination="P2B-fu-b3W" kind="unwind" unwindAction="unwindFromDetailViewController:" id="FjR-2C-peD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="brandLabel" destination="boY-IY-MdM" id="Aau-KC-FdX"/>
                         <outlet property="colorLabel" destination="tFd-xh-9j3" id="TId-yG-jOx"/>
@@ -133,6 +139,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
+                <exit id="P2B-fu-b3W" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1343" y="64"/>
         </scene>

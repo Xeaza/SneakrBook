@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Friend.h"
 
 @interface DetailViewController ()
 
@@ -36,6 +37,30 @@
                self.image.image = [[UIImage alloc] initWithData:data];
            }
        }];
+}
+
+
+- (IBAction)onFavoriteButtonPressed:(id)sender
+{
+    NSLog(@"Hi");
+//    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+//
+//    Friend *friend = [NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:managedObjectContext];
+//
+//    //adventurer.name = textField.text;
+//    //adventurer.species = [NSNumber numberWithInt:arc4random_uniform(4)];
+//
+//    NSError *error;
+//    if ([self.managedObjectContext save:&error])
+//    {
+//        [self loadAdventurers];
+//        textField.text = @"";
+//        [textField resignFirstResponder];
+//    }
+//    else
+//    {
+//        NSLog(@"Error Saving Adventurer: %@",error.localizedDescription);
+//    }
 }
 
 @end

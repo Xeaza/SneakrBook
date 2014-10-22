@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface DetailViewController : UIViewController
 
 @property (strong, nonatomic) NSDictionary *user;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 
 @end
 
