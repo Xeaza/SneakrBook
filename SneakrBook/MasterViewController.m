@@ -11,6 +11,8 @@
 
 @interface MasterViewController ()
 
+@property NSArray *users;
+
 @end
 
 @implementation MasterViewController
@@ -22,7 +24,6 @@
     [self loadUsers];
 }
 
-
 - (void)loadUsers
 {
      NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://s3.amazonaws.com/mobile-makers-assets/app/public/ckeditor_assets/attachments/18/friends.json"]];
@@ -33,11 +34,26 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
     NSURLSessionDataTask *task = [delegateFreeSession dataTaskWithRequest:request completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSArray *users = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        NSLog(@"Friends: %@",users);
+        self.users = [NSArray array];
+        self.users = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        //NSLog(@"Friends: %@",users);
+        
+        [self.tableView reloadData];
      }];
 
     [task resume];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.users.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    cell.textLabel.text = [self.users objectAtIndex:indexPath.row];
+    return cell;
 }
 
 @end
