@@ -19,27 +19,25 @@
 {
     [super viewDidLoad];
 
-   //
+    [self loadUsers];
+}
 
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://s3.amazonaws.com/mobile-makers-assets/app/public/ckeditor_assets/attachments/18/friends.json"]];
+
+- (void)loadUsers
+{
+     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://s3.amazonaws.com/mobile-makers-assets/app/public/ckeditor_assets/attachments/18/friends.json"]];
+
+    NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
 
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    NSURLSessionDataTask *task = [delegateFreeSession dataTaskWithRequest:request completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSArray *users = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        NSLog(@"Friends: %@",users);
+     }];
 
-        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        NSLog(@"%@",jsonArray);
-       // NSMutableArray *meetUps = [[NSMutableArray alloc] initWithCapacity:jsonArray.count];
-
-//        for (NSDictionary *dict in jsonArray) {
-//            Event *event = [[Event alloc] initWithDictionary:dict];
-//            [meetUps addObject:event];
-//        }
-
-    }];
-
-
-
+    [task resume];
 }
 
 @end
