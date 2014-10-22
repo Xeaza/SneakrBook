@@ -41,13 +41,14 @@
         NSArray *shoeColors = @[@"Blue", @"Green", @"Yellow", @"Purple"];
         NSArray *shoeImages = @[[NSURL URLWithString:@"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQLPIWBSq4BTHAXFs6wUneg5vYesY8ai0TVr_MmXnZbe4Pun7FU"], [NSURL URLWithString:@"http://media.melablog.it/a/app/apple_shoes.jpg"], [NSURL URLWithString:@"http://www.lobshots.com/wp-content/uploads/2011/10/google-nike-shoes.jpg"], [NSURL URLWithString:@"https://img1.etsystatic.com/000/0/5783547/il_fullxfull.238454345.jpg"]];
 
-        int randomIndex1 = arc4random_uniform(0)+3;
-        int randomIndex2 = arc4random_uniform(0)+3;
-        int randomIndex3 = arc4random_uniform(0)+3;
-        int randomIndex4 = arc4random_uniform(0)+3;
+
         NSMutableArray *newUsers = [NSMutableArray array];
         for (NSString *user in usersFromJson)
         {
+            int randomIndex1 = arc4random_uniform(3);
+            int randomIndex2 = arc4random_uniform(3);
+            int randomIndex3 = arc4random_uniform(3);
+            int randomIndex4 = arc4random_uniform(3);
             NSDictionary *usersDetails = [NSDictionary dictionaryWithObjectsAndKeys:user, @"name", shoeBrands[randomIndex1], @"shoeBrand", shoeSizes[randomIndex2], @"shoeSize", shoeColors[randomIndex3], @"shoeColor", shoeImages[randomIndex4], @"shoeImage",  nil];
             [newUsers addObject:usersDetails];
         }
@@ -68,6 +69,19 @@
     NSDictionary *userDict = [self.users objectAtIndex:indexPath.row];
     cell.textLabel.text = userDict[@"name"];
     return cell;
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+
+    if ([segue.identifier isEqualToString:@"UserDetailSegue"])
+    {
+        DetailViewController *detailViewController = segue.destinationViewController;
+        detailViewController.user = [self.users objectAtIndex:indexPath.row];
+    }
 }
 
 @end
