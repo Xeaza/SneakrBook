@@ -34,13 +34,26 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
     NSURLSessionDataTask *task = [delegateFreeSession dataTaskWithRequest:request completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
-        self.users = [NSArray array];
-        self.users = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        NSArray *usersFromJson = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         //NSLog(@"Friends: %@",users);
-        
+        NSArray *shoeBrands = @[@"Nike", @"New Balance", @"Puma", @"James Bond"];
+        NSArray *shoeSizes = @[@7, @5, @8, @12];
+        NSArray *shoeColors = @[@"Blue", @"Green", @"Yellow", @"Purple"];
+        NSArray *shoeImages = @[[NSURL URLWithString:@"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQLPIWBSq4BTHAXFs6wUneg5vYesY8ai0TVr_MmXnZbe4Pun7FU"], [NSURL URLWithString:@"http://media.melablog.it/a/app/apple_shoes.jpg"], [NSURL URLWithString:@"http://www.lobshots.com/wp-content/uploads/2011/10/google-nike-shoes.jpg"], [NSURL URLWithString:@"https://img1.etsystatic.com/000/0/5783547/il_fullxfull.238454345.jpg"]];
+
+        int randomIndex1 = arc4random_uniform(0)+3;
+        int randomIndex2 = arc4random_uniform(0)+3;
+        int randomIndex3 = arc4random_uniform(0)+3;
+        int randomIndex4 = arc4random_uniform(0)+3;
+        NSMutableArray *newUsers = [NSMutableArray array];
+        for (NSString *user in usersFromJson)
+        {
+            NSDictionary *usersDetails = [NSDictionary dictionaryWithObjectsAndKeys:user, @"name", shoeBrands[randomIndex1], @"shoeBrand", shoeSizes[randomIndex2], @"shoeSize", shoeColors[randomIndex3], @"shoeColor", shoeImages[randomIndex4], @"shoeImage",  nil];
+            [newUsers addObject:usersDetails];
+        }
+        self.users = [NSArray arrayWithArray:newUsers];
         [self.tableView reloadData];
      }];
-
     [task resume];
 }
 
@@ -52,7 +65,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textLabel.text = [self.users objectAtIndex:indexPath.row];
+    NSDictionary *userDict = [self.users objectAtIndex:indexPath.row];
+    cell.textLabel.text = userDict[@"name"];
     return cell;
 }
 
