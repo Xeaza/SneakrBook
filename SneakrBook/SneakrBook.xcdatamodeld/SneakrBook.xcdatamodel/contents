@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Comments" syncable="YES"/>
-    <entity name="Friend">
+    <entity name="Comments" representedClassName="Comments" syncable="YES">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="shoe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Shoes" inverseName="comments" inverseEntity="Shoes" syncable="YES"/>
+    </entity>
+    <entity name="Friend" representedClassName="Friend">
         <attribute name="name" optional="YES" attributeType="String">
             <userInfo/>
         </attribute>
-        <attribute name="shoeColor" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="shoeSize" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="shoes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Shoes" inverseName="friends" inverseEntity="Shoes" syncable="YES"/>
         <userInfo/>
     </entity>
-    <entity name="Shoes" syncable="YES"/>
+    <entity name="Shoes" representedClassName="Shoes" syncable="YES">
+        <attribute name="brand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comments" inverseName="shoe" inverseEntity="Comments" syncable="YES"/>
+        <relationship name="friends" maxCount="1" deletionRule="Nullify" destinationEntity="Friend" inverseName="shoes" inverseEntity="Friend" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Friend" positionX="261" positionY="189" width="128" height="90"/>
-        <element name="Shoes" positionX="270" positionY="225" width="128" height="45"/>
-        <element name="Comments" positionX="288" positionY="234" width="128" height="45"/>
+        <element name="Friend" positionX="261" positionY="189" width="128" height="73"/>
+        <element name="Shoes" positionX="270" positionY="225" width="128" height="133"/>
+        <element name="Comments" positionX="288" positionY="234" width="128" height="73"/>
     </elements>
 </model>

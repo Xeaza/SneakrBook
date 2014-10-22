@@ -16,6 +16,9 @@
 		3451281719F8230F00F89CE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3451281619F8230F00F89CE4 /* Images.xcassets */; };
 		3451281A19F8230F00F89CE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3451281819F8230F00F89CE4 /* LaunchScreen.xib */; };
 		3451282619F8230F00F89CE4 /* SneakrBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3451282519F8230F00F89CE4 /* SneakrBookTests.m */; };
+		3451283119F8465700F89CE4 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3451283019F8465700F89CE4 /* Friend.m */; };
+		3451283419F8465700F89CE4 /* Shoes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3451283319F8465700F89CE4 /* Shoes.m */; };
+		3451283719F8465700F89CE4 /* Comments.m in Sources */ = {isa = PBXBuildFile; fileRef = 3451283619F8465700F89CE4 /* Comments.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,12 @@
 		3451281F19F8230F00F89CE4 /* SneakrBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SneakrBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3451282419F8230F00F89CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3451282519F8230F00F89CE4 /* SneakrBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SneakrBookTests.m; sourceTree = "<group>"; };
+		3451282F19F8465700F89CE4 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		3451283019F8465700F89CE4 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		3451283219F8465700F89CE4 /* Shoes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shoes.h; sourceTree = "<group>"; };
+		3451283319F8465700F89CE4 /* Shoes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shoes.m; sourceTree = "<group>"; };
+		3451283519F8465700F89CE4 /* Comments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comments.h; sourceTree = "<group>"; };
+		3451283619F8465700F89CE4 /* Comments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comments.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,12 @@
 				3451281619F8230F00F89CE4 /* Images.xcassets */,
 				3451281819F8230F00F89CE4 /* LaunchScreen.xib */,
 				3451280A19F8230F00F89CE4 /* SneakrBook.xcdatamodeld */,
+				3451283519F8465700F89CE4 /* Comments.h */,
+				3451283619F8465700F89CE4 /* Comments.m */,
+				3451283219F8465700F89CE4 /* Shoes.h */,
+				3451283319F8465700F89CE4 /* Shoes.m */,
+				3451282F19F8465700F89CE4 /* Friend.h */,
+				3451283019F8465700F89CE4 /* Friend.m */,
 				3451280319F8230F00F89CE4 /* Supporting Files */,
 			);
 			path = SneakrBook;
@@ -230,6 +245,9 @@
 				3451281219F8230F00F89CE4 /* DetailViewController.m in Sources */,
 				3451280F19F8230F00F89CE4 /* MasterViewController.m in Sources */,
 				3451280919F8230F00F89CE4 /* AppDelegate.m in Sources */,
+				3451283719F8465700F89CE4 /* Comments.m in Sources */,
+				3451283119F8465700F89CE4 /* Friend.m in Sources */,
+				3451283419F8465700F89CE4 /* Shoes.m in Sources */,
 				3451280619F8230F00F89CE4 /* main.m in Sources */,
 				3451280C19F8230F00F89CE4 /* SneakrBook.xcdatamodeld in Sources */,
 			);
