@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341FECD719F8AF830023ACE4 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341FECD619F8AF830023ACE4 /* FavoritesTableViewController.m */; };
 		3451280619F8230F00F89CE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3451280519F8230F00F89CE4 /* main.m */; };
 		3451280919F8230F00F89CE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3451280819F8230F00F89CE4 /* AppDelegate.m */; };
 		3451280C19F8230F00F89CE4 /* SneakrBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3451280A19F8230F00F89CE4 /* SneakrBook.xcdatamodeld */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		341FECD519F8AF830023ACE4 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
+		341FECD619F8AF830023ACE4 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
 		3451280019F8230F00F89CE4 /* SneakrBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SneakrBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3451280419F8230F00F89CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3451280519F8230F00F89CE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				3451280E19F8230F00F89CE4 /* MasterViewController.m */,
 				3451281019F8230F00F89CE4 /* DetailViewController.h */,
 				3451281119F8230F00F89CE4 /* DetailViewController.m */,
+				341FECD519F8AF830023ACE4 /* FavoritesTableViewController.h */,
+				341FECD619F8AF830023ACE4 /* FavoritesTableViewController.m */,
 				3451281319F8230F00F89CE4 /* Main.storyboard */,
 				3451281619F8230F00F89CE4 /* Images.xcassets */,
 				3451281819F8230F00F89CE4 /* LaunchScreen.xib */,
@@ -248,6 +253,7 @@
 				3451283719F8465700F89CE4 /* Comments.m in Sources */,
 				3451283119F8465700F89CE4 /* Friend.m in Sources */,
 				3451283419F8465700F89CE4 /* Shoes.m in Sources */,
+				341FECD719F8AF830023ACE4 /* FavoritesTableViewController.m in Sources */,
 				3451280619F8230F00F89CE4 /* main.m in Sources */,
 				3451280C19F8230F00F89CE4 /* SneakrBook.xcdatamodeld in Sources */,
 			);
@@ -440,6 +446,7 @@
 				3451282B19F8230F00F89CE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3451282C19F8230F00F89CE4 /* Build configuration list for PBXNativeTarget "SneakrBookTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +455,7 @@
 				3451282E19F8230F00F89CE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

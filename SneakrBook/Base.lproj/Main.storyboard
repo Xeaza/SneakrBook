@@ -19,6 +19,33 @@
             </objects>
             <point key="canvasLocation" x="-148" y="64"/>
         </scene>
+        <!--Favorites Table View Controller-->
+        <scene sceneID="UeO-J7-gTI">
+            <objects>
+                <tableViewController id="S01-A7-IyT" customClass="FavoritesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="B1l-rh-Ycm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="wct-on-KoU">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wct-on-KoU" id="4Pd-CJ-gQF">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="S01-A7-IyT" id="6z7-4j-7kc"/>
+                            <outlet property="delegate" destination="S01-A7-IyT" id="lOE-5S-ae5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="SmZ-Sf-rdl"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jPn-ab-hAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1343" y="-642"/>
+        </scene>
         <!--Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
@@ -56,7 +83,13 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz">
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="qPf-H5-HTz">
+                            <connections>
+                                <segue destination="Fm7-2M-zKo" kind="presentation" identifier="FavoritesSegue" modalTransitionStyle="flipHorizontal" id="ekZ-Nb-wAr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,7 +160,7 @@
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN">
                         <barButtonItem key="rightBarButtonItem" title="Favorite" id="7Se-3F-eZG">
                             <connections>
-                                <segue destination="P2B-fu-b3W" kind="unwind" unwindAction="unwindFromDetailViewController:" id="FjR-2C-peD"/>
+                                <action selector="onFavoriteButtonPressed:" destination="Ah7-4n-0Wa" id="KhN-fC-pAg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -139,9 +172,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
-                <exit id="P2B-fu-b3W" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1343" y="64"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="02S-GK-wIg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fm7-2M-zKo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zhI-WV-KSZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="S01-A7-IyT" kind="relationship" relationship="rootViewController" id="jw0-rH-Od1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOd-VK-MzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605" y="-642"/>
         </scene>
     </scenes>
 </document>

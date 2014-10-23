@@ -8,6 +8,9 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "FavoritesTableViewController.h"
+#import "Friend.h"
+#import "Shoes.h"
 
 @interface MasterViewController ()
 
@@ -27,14 +30,17 @@
 - (void)loadUsers
 {
      NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://s3.amazonaws.com/mobile-makers-assets/app/public/ckeditor_assets/attachments/18/friends.json"]];
-
+    
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
 
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-
     NSURLSessionDataTask *task = [delegateFreeSession dataTaskWithRequest:request completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSArray *usersFromJson = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+
+        NSArray *usersFromJson = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+        if (error) {
+            NSLog(@"Error: %@",error.localizedDescription);
+        }
         //NSLog(@"Friends: %@",users);
         NSArray *shoeBrands = @[@"Nike", @"New Balance", @"Puma", @"James Bond"];
         NSArray *shoeSizes = @[@7, @5, @8, @12];
@@ -81,14 +87,33 @@
     {
         DetailViewController *detailViewController = segue.destinationViewController;
         detailViewController.user = [self.users objectAtIndex:indexPath.row];
+        detailViewController.managedObjectContext = self.managedObjectContext;
+        //[detailViewController setManagedObjectContext:[self managedObjectContext]];
+    }
+    else if ([segue.identifier isEqualToString:@"FavoritesSegue"])
+    {
+        FavoritesTableViewController *favoritesTableViewController = segue.destinationViewController;
+       // favoritesTableViewController.managedObjectContext = self.managedObjectContext;
+//        [favoritesTableViewController setManagedObjectContext:[self managedObjectContext]];
     }
 }
 
-- (IBAction)unwindFromDetailViewController:(UIStoryboardSegue *)segue
-{
-    NSLog(@"oh hello");
-    DetailViewController *detailViewController = segue.sourceViewController;
-    
-}
+//- (IBAction)unwindFromDetailViewController:(UIStoryboardSegue *)segue
+//{
+//    DetailViewController *detailViewController =  segue.sourceViewController;
+//    Friend *friend = [detailViewController createShoe];
+//
+//    [friend addAdventurersObject:detailViewController.adventurer];
+//    NSError *error;
+//    if ([self.managedObjectContext save:&error])
+//    {
+//        [self loadAdventurers];
+//    }
+//    else
+//    {
+//        NSLog(@"Error Adding raid: %@", error.localizedDescription);
+//    }
+//
+//}
 
 @end

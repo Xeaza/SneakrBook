@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  FavoritesTableViewController.h
 //  SneakrBook
 //
 //  Created by Taylor Wright-Sanson on 10/22/14.
@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface DetailViewController : UIViewController
+@interface FavoritesTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSDictionary *user;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
-
